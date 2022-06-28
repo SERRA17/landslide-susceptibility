@@ -27,6 +27,14 @@ La identificación de deslizamientos pasados es vital para la evaluación del ri
 
 ## El juego de datos de entrenamiento
 
+El juego de datos con el que se ha realizado el presente trabajo está compuesto por 7598 ficheros \*.h5 repartidos en dos carpetas, "img" y "mask".
+
+![Carpetas](./img/training_folder.png)
+
+En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los satélites Sentinel-2 más dos bandas adicionales: un modelo digital del terreno y un modelo de pendientes. Con la misma numeración, y en la carpeta mask, se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
+
+
+
 
 
 
