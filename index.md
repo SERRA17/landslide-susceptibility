@@ -41,7 +41,7 @@ En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los s
 Cada banda presenta 128\*128 píxeles, con una resolución de 10 m por pixel.
 
 ![Bandas en cada fichero h5](./img/bandas_sentinel.png)
-*Las 14 bandas en el fichero imgage_1.h5*
+*Las 14 bandas en el fichero imagen_1.h5*
 
 
 Por cada fichero en la carpeta "img", con la misma numeración en el fichero, tamaño de malla (128\*128), resolución (10 m) en la carpeta mask se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
@@ -102,6 +102,8 @@ Tanto el DEM como la banda de pendientes son, a priori, conjuntos de datos que p
 
 Para intentar mejorar estos conjuntos de datos, se ha optado por aplicar un filtro de 5x5 para suavizar tanto el modelo digital de elevaciones como la capa de pendientes.
 
+![Pendiente sin suavizar](./img/pendiente_sin_suavizar.png) ![Pendiente suavizada](./img/pendiente_suavizada.png)
+*Histograma de las capas de pendientes sin suavizar - izquierda - y suavizada - derecha - para la imagen imagen_1.h5*
 
 
 -------------------------------------------------------------------------
