@@ -24,6 +24,8 @@ En este repositorio encontrará los siguientes scripts y/o archivos de soporte:
 - Carpeta [Deep Learning](https://github.com/SERRA17/landslide-susceptibility/tree/main/deep-learning)
   - UNET model.ipynb . Implementación de un modelo secuencial y otro basado en una red convolucional U-Net
 
+Cada uno de los ficheros incluidos en el repositorio puede ser ejecutado de forma independiente. Sin embargo, será necesario actualizar la ubicación del juego de datos de entrenamiento. Este puede descargarse de: [Training data](https://cloud.iarai.ac.at/index.php/s/KrwKngeXN7KjkFm)
+
 
 
 
