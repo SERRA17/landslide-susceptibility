@@ -74,6 +74,9 @@ Uno de los elementos que cabe mencionar del gráfico anterior es el caracter "se
 
 Este hecho es relevante porque nos obligará más adelante a considerar el tratamiento de estas dos bandas (pendiente y modelo digital de elevaciones).
 
+## Preprocesado de los datos
+
+
 -------------------------------------------------------------------------
 
 ### Markdown
