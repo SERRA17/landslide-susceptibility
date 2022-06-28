@@ -54,6 +54,11 @@ Las imágenes etiquetadas ("mask") siguen la siguiente clasificación:
 - No deslizamiento: 0
 - Deslizamiento: 1
 
+En la siguiente imagen muestra un primer análisis de la distribución de los valores para las diferentes bandas y en las zonas etiquetas con/sin deslizamiento [Ver aquí](https://github.com/SERRA17/landslide-susceptibility/blob/main/testing%20the%20dataset/Analisis%20de%20im%C3%A1genes.ipynb). 
+
+![Banda 12](./img/analisis_bandas_b12.png)
+![Banda 13](./img/analisis_bandas_b13.png)
+![Banda 14](./img/analisis_bandas_b14.png)
 
 
 
