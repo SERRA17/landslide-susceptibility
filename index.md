@@ -1,6 +1,12 @@
-## Identificación de desliamientos en imágenes Sentinel-2
+# Identificación de desliamientos en imágenes Sentinel-2
 
-Acabo de hacer este cambio.
+Esta página explica el trabajo desarrollado en el marco del *Capstone project* del Postgrado UB Datascience and Machine Learning (  http://www.ub.edu/datascience/postgraduate/ ) por los estudiantes:
+- Lluis Serra Domínguez
+- Jesús de Diego Alarcón
+
+Como tema para el projecto final se ha utilizado el *challenge* propuesto por el *Institute for Advanced Research in Artificial Ingelligente* accesible en el siguiente enlace: [Landslide4Sense](https://www.iarai.ac.at/landslide4sense/)
+
+## Introducción
 
 You can use the [editor on GitHub](https://github.com/SERRA17/landslide-susceptibility/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
