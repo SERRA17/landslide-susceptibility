@@ -1,4 +1,4 @@
-# Capstone project: Identificación de deslizamientos
+# Capstone project: Identificación de deslizamientos en imágenes de satélite Sentinel-2
 
 El presente repositorio contiene los scripts desarrollados en el marco del capstone project del Postgrado UB Datascience and Machine Learning (  http://www.ub.edu/datascience/postgraduate/ ) por los estudiantes:
 - Jesús de Diego Alarcón
