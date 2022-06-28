@@ -70,7 +70,11 @@ Para las tres bandas mostradas en la figura (Bandas 12, 13 y 13) se han generado
 - mean_i . El valor medio de la banda en las áreas con deslizamiento
 ```
 
-----------------------------------------------------------------------------------------------------
+Uno de los elementos que cabe mencionar del gráfico anterior es el caracter "serrado" de los histogramas de pendientes y elevaciones (DEM), bandas 13 y 14. Esto indica una concentración de celdas en torno a unos valores determinados. Aparentemente el modelo de pendientes se ha elaborado a partir del modelo digital de elevaciones (DEM). Esto podría indicar que el DEM se ha interpolado a partir de curvas de nivel (los picos indicarían los valores de las curvas de nivel que son equidistantes en un mapa 2D).
+
+Este hecho es relevante porque nos obligará más adelante a considerar el tratamiento de estas dos bandas (pendiente y modelo digital de elevaciones).
+
+-------------------------------------------------------------------------
 
 ### Markdown
 
