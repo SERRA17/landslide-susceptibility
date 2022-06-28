@@ -21,7 +21,7 @@ En este repositorio encontrará los siguientes scripts y/o archivos de soporte:
   - data_extraction.zip . Resultado del notebook "Raster Sampling" que es utilizado como input en "Logistic Regresion and Random Forest classification".
 
 - Carpeta "Deep Learning" ( https://github.com/SERRA17/landslide-susceptibility/tree/main/deep-learning )
-- UNET model.ipynb . Implementación de un modelo secuencial y otro basado en una red convolucional U-Net
+  - UNET model.ipynb . Implementación de un modelo secuencial y otro basado en una red convolucional U-Net
 
 
 
