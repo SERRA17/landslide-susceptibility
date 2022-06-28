@@ -103,7 +103,13 @@ Tanto el DEM como la banda de pendientes son, a priori, conjuntos de datos que p
 Para intentar mejorar estos conjuntos de datos, se ha optado por aplicar un filtro de 5x5 para suavizar tanto el modelo digital de elevaciones como la capa de pendientes.
 
 ![Pendiente sin suavizar](./img/pendiente_sin_suavizar.png) ![Pendiente suavizada](./img/pendiente_suavizada.png)
-*Histograma de las capas de pendientes sin suavizar - izquierda - y suavizada - derecha - para la imagen imagen_1.h5*
+
+*Histograma de frecuencias para los valores de las capas/bandas de pendientes sin suavizar - izquierda - y suavizada - derecha - para la imagen imagen_1.h5*
+
+En el siguiente Notebook se evaluan varios mecanismos para el suavizado de los datos: [DEM and slope denoising.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/testing%20the%20dataset/DEM%20and%20slope%20denoising.ipynb)
+
+Una vez suavizado el modelo digital del terreno, es posible obtener nuevos conjuntos de datos derivados utilizando la librería RichDem[^9]
+
 
 
 -------------------------------------------------------------------------
@@ -151,3 +157,4 @@ https://www.ggs-solutions.eu/wp-content/uploads/Landslide-Detection-in-Central-A
 
 [^7]: Ver, por ejemplo, https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada
 [^8]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
+[^9]: Ver https://richdem.readthedocs.io/en/latest/ 
