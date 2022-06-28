@@ -22,6 +22,9 @@ Entre los años 1998 y 2017 los deslizamientos causaron más de 18.000 muertes a
 
 La identificación de deslizamientos pasados es vital para la evaluación del riesgo de ocurrencia futura de este tipo de eventos catastróficos. En los últimos años, diversos algorítmos basados en técnicas de Machine Learning aplicadas a imágenes de satélite[^3].
 
+![Identificación de un deslizamiento en una imagen de satélite mediante técnicas de *Machine Learning*](https://www.iarai.ac.at/landslide4sense/wp-content/uploads/sites/5/2022/03/landslide_image_main-02.png)
+*Identificación de un deslizamiento en una imagen de satélite mediante técnicas de Machine Learning*
+
 ## El juego de datos de entrenamiento
 
 
