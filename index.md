@@ -76,7 +76,23 @@ Este hecho es relevante porque nos obligará más adelante a considerar el trata
 
 ## Preprocesado de los datos
 
+Antes de comenzar a definir los modelos, vamos a explorar varias alternativas para el preprocesado de los datos. Utilizaremos dos aproximaciones:
+- Creación de nuevas bandas
+- Generación de nuevos indicadores a partir de un DEM (Digial Elevation Model o Modelo Digital de Elevaciones) previamente suavizado. 
 
+### Creación de nuevas bandas
+
+La revisión de la literatura científica nos indica que existen varios indicadores, generados a partir de las bandas multiespectrales estándar, que pueden ser utilizados con éxito en la identificación de deslizamientos. Nos vamos a centar en dos de estos indicadores:
+- NDVI[^6] ( Normalized Difference Vegetation Index o Índice de Vegetación de Diferencia Normalizada) es un índice que estima la densidad de vegetación. Éste índice se calcular mediante la siguiente fórmula: 
+```  
+NDVI = (NIR-Red) / (NIR+Red) 
+donde:
+NIR es la banda del infrarrojo cercano
+Red es la banda del rojo
+En el caso de Sentinel-2 la combinación de bandas para obtener este índice es:
+NDVI (Sentinel 2) = (B8 – B4) / (B8 + B4)
+```
+- BSI o Barren Soil Index es otro índice que se suele utilizar en la identificación de deslizamientos[^7]. Su formulación, para imágenes Sentinel-2, es la siguiente:
 -------------------------------------------------------------------------
 
 ### Markdown
@@ -116,3 +132,5 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 [^3]: Ver, por ejemplo, https://link.springer.com/article/10.1007/s11069-022-05423-7 
 [^4]: Más detalles sobre las diferentes bandas en: https://www.satimagingcorp.com/satellite-sensors/other-satellite-sensors/sentinel-2a/ 
 [^5]: Más información sobre los datos del proyecto Alos Palsar en https://earth.esa.int/eogateway/catalog/alos-palsar-products
+[^6]: Ver, por ejemplo, https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada
+[^7]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
