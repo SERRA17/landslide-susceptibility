@@ -108,9 +108,14 @@ Para intentar mejorar estos conjuntos de datos, se ha optado por aplicar un filt
 
 En el siguiente Notebook se evaluan varios mecanismos para el suavizado de los datos: [DEM and slope denoising.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/testing%20the%20dataset/DEM%20and%20slope%20denoising.ipynb)
 
-Una vez suavizado el modelo digital del terreno, es posible obtener nuevos conjuntos de datos derivados utilizando la librería RichDem[^9]
+Una vez suavizado el modelo digital del terreno, es posible obtener nuevos conjuntos de datos derivados utilizando la librería RichDem[^9] . Los tres nuevos dataset que obtendremos a partir del DEM son[^10] :
+- Curvature
+- Profile curvature
+- Planform curvature
 
+Finalmente, a partir de MDE y la capa de pendiente original es posible obtener, para cada imagen, un nuevo conjunto de datasets.
 
+![Preprocesado de datos](./img/preprocesado_datos.png)
 
 -------------------------------------------------------------------------
 
@@ -158,3 +163,4 @@ https://www.ggs-solutions.eu/wp-content/uploads/Landslide-Detection-in-Central-A
 [^7]: Ver, por ejemplo, https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada
 [^8]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
 [^9]: Ver https://richdem.readthedocs.io/en/latest/ 
+[^10]: Para una explicación detallada de estos parámetros: https://richdem.readthedocs.io/en/latest/terrain_attributes.html?highlight=curvature#curvature
