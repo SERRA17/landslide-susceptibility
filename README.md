@@ -1,17 +1,29 @@
-# Landslide4sense challenge description
-The aim of the competition is to promote innovative algorithms for automatic landslide detection using remote sensing images around the globe, 
-and to provide objective and fair comparisons among different methods. The competition ranking is based on a quantitative accuracy metric 
-(F1 score) computed with respect to undisclosed test samples. 
+# Capstone project: Identificación de deslizamientos
 
-# The data
-The Landslide4Sense dataset is derived from diverse landslide-affected areas around the world from 2015 through 2021. It can be downloaded from: 
-https://www.iarai.ac.at/landslide4sense/challenge/. 
+El presente repositorio contiene los scripts desarrollados en el marco del capstone project del Postgrado UB Datascience and Machine Learning (  http://www.ub.edu/datascience/postgraduate/ ) por los estudiantes:
+- Jesús de Diego Alarcón
+- Lluis Serra Domínguez
 
-The data consists of the training, validation, and test sets containing 3799, 245, and 800 image patches, 
-respectively. Each image patch is a composite of 14 bands that include:
-* Multispectral data from Sentinel-2: B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12.
-* Slope data from ALOS PALSAR: B13.
-* Digital elevation model (DEM) from ALOS PALSAR: B14.
-All bands in the competition dataset are resized to the resolution of ~10m per pixel. The image patches have the size of 128 x 128 pixels and are labeled pixel-wise.
+Una breve explicación del alcance del proyecto puede encontrarse aquí: https://serra17.github.io/landslide-susceptibility/
+El trabajo está basado en la propuesta especificada en el siguiente challenge: https://www.iarai.ac.at/landslide4sense/ 
 
-For this project we have followed two different approaches: 
+# El contenido
+
+En este repositorio encontrará los siguientes scripts y/o archivos de soporte:
+- Carpeta "Testing the dataset" ( https://github.com/SERRA17/landslide-susceptibility/tree/main/testing%20the%20dataset ):
+  - Analisis de imágenes.ipynb . El notebook describe un primer análisis de las imágenes utilizadas.
+  - DEM and slope denoising.ipynb . Este notebook permite realizar el suavizado de la banda del modelo digital del terreno.
+  - parametros_imagenes.csv . Parámetros de las diferentes imágenes y bandas del juego de datos de training.
+
+- Carpeta "logistic and random forest model/" ( https://github.com/SERRA17/landslide-susceptibility/tree/main/logistic%20and%20random%20forest%20model )
+  - Raster sampling.ipynb El notebook genera los datos que se utilizarán en los modelos de regresión logística y random forest.
+  - Logistic Regression and Random Forest classification.ipynb . Modelo de regresión logística y Random Forest ( Este notebook está implementado en R).
+  - data_extraction.zip . Resultado del notebook "Raster Sampling" que es utilizado como input en "Logistic Regresion and Random Forest classification".
+
+- Carpeta "Deep Learning" ( https://github.com/SERRA17/landslide-susceptibility/tree/main/deep-learning )
+  - UNET model.ipynb . Implementación de un modelo secuencial y otro basado en una red convolucional U-Net
+
+
+
+
+
