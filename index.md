@@ -38,15 +38,19 @@ En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los s
 - Datos de pendiente de ALOS PALSAR: B13.
 - Modelo digital de elevaciones (MDE o DEM) de ALOS PALSAR: B14.
 
+Cada banda presenta 128\*128 píxeles, con una resolución de 10 m por pixel.
+
 ![Bandas en cada fichero h5](./img/bandas_sentinel.png)
 *Las 14 bandas en el fichero imgage_1.h5*
 
 
-Por cada fichero en la carpeta "img", con la misma numeración, y en la carpeta mask, se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
+Por cada fichero en la carpeta "img", con la misma numeración, tamaño de malla, resolución, y en la carpeta mask, se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
 
 ![Deslizamientos etiquetados](./img/mask_landslide.png)
 
 *Deslizamientos etiquetados en la imagen mask_1.h5 (mismo área que la imagen anterior, image_1.h5*)*
+
+
 
 
 
