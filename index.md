@@ -54,21 +54,23 @@ Las imágenes etiquetadas ("mask") siguen la siguiente clasificación:
 - No deslizamiento: 0
 - Deslizamiento: 1
 
-En la siguiente imagen muestra un primer análisis de la distribución de los valores para las diferentes bandas y en las zonas etiquetas con/sin deslizamiento [Ver aquí](https://github.com/SERRA17/landslide-susceptibility/blob/main/testing%20the%20dataset/Analisis%20de%20im%C3%A1genes.ipynb). 
+En la siguiente imagen muestra un primer análisis de la distribución de los valores para las diferentes bandas y en las zonas etiquetas con/sin deslizamiento [Ver aquí en análisis completo](https://github.com/SERRA17/landslide-susceptibility/blob/main/testing%20the%20dataset/Analisis%20de%20im%C3%A1genes.ipynb). 
 
 ![Banda 12](./img/analisis_bandas_b12.png)
 ![Banda 13](./img/analisis_bandas_b13.png)
 ![Banda 14](./img/analisis_bandas_b14.png)
 
+Para las tres bandas mostradas en la figura (Bandas 12, 13 y 13) se han generado los siguientes histogramas:
+```
+- min_m . El valor mínimo de la banda en las áreas con deslizamiento
+- max_m . El valor máximo de la banda en las áreas con deslizamiento
+- mean_m . El valor medio de la banda en las áreas con deslizamiento
+- min_i . El valor mínimo de la banda en las áreas sin deslizamiento
+- max_i . El valor máximo de la banda en las áreas sin delizamiento
+- mean_i . El valor medio de la banda en las áreas con deslizamiento
+```
 
-
-
-
-
-
-You can use the [editor on GitHub](https://github.com/SERRA17/landslide-susceptibility/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+----------------------------------------------------------------------------------------------------
 
 ### Markdown
 
