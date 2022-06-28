@@ -35,7 +35,7 @@ El juego de datos con el que se ha realizado el presente trabajo está compuesto
 En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los satélites Sentinel-2 más dos bandas adicionales: un modelo digital del terreno y un modelo de pendientes:
 
 - Datos multiespectrales de Sentinel-2[^4] : B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12.
-- Datos de pendiente de ALOS PALSAR: B13.
+- Datos de pendiente de ALOS PALSAR[^5] : B13.
 - Modelo digital de elevaciones (MDE o DEM) de ALOS PALSAR: B14.
 
 Cada banda presenta 128\*128 píxeles, con una resolución de 10 m por pixel.
@@ -101,3 +101,4 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 [^2]: Fuente: https://www.who.int/health-topics/landslides#tab=tab_1 
 [^3]: Ver, por ejemplo, https://link.springer.com/article/10.1007/s11069-022-05423-7 
 [^4]: Más detalles sobre las diferentes bandas en: https://www.satimagingcorp.com/satellite-sensors/other-satellite-sensors/sentinel-2a/ 
+[^5]: Más información sobre los datos del proyecto Alos Palsar en https://earth.esa.int/eogateway/catalog/alos-palsar-products
