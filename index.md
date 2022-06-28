@@ -82,8 +82,8 @@ Antes de comenzar a definir los modelos, vamos a explorar varias alternativas pa
 
 ### Creación de nuevas bandas
 
-La revisión de la literatura científica nos indica que existen varios indicadores, generados a partir de las bandas multiespectrales estándar, que pueden ser utilizados con éxito en la identificación de deslizamientos. Nos vamos a centar en dos de estos indicadores:
-- NDVI[^6] ( Normalized Difference Vegetation Index o Índice de Vegetación de Diferencia Normalizada) es un índice que estima la densidad de vegetación. Éste índice se calcular mediante la siguiente fórmula: 
+La revisión de la literatura científica[6^] nos indica que existen varios indicadores, generados a partir de las bandas multiespectrales estándar, que pueden ser utilizados con éxito en la identificación de deslizamientos. Nos vamos a centar en dos de estos indicadores:
+- NDVI[^7] ( Normalized Difference Vegetation Index o Índice de Vegetación de Diferencia Normalizada) es un índice que estima la densidad de vegetación. Éste índice se calcular mediante la siguiente fórmula: 
 ```  
 NDVI = (NIR-Red) / (NIR+Red) 
 donde:
@@ -92,7 +92,18 @@ Red es la banda del rojo
 En el caso de Sentinel-2 la combinación de bandas para obtener este índice es:
 NDVI (Sentinel 2) = (B8 – B4) / (B8 + B4)
 ```
-- BSI o Barren Soil Index es otro índice que se suele utilizar en la identificación de deslizamientos[^7]. Su formulación, para imágenes Sentinel-2, es la siguiente:
+- BSI o Barren Soil Index es otro índice que se suele utilizar en la identificación de deslizamientos[^8]. Su formulación, para imágenes Sentinel-2, es la siguiente:
+```
+BSI = ((B11 + B04) - (B08 + B02)) / ((B11 + B04) + (B08 + B02))
+```
+### Generación de nuevos indicadores a partir del DEM suavizado
+
+Tanto el DEM como la banda de pendientes son, a priori, conjuntos de datos que pueden resultar de interés en la identificación de deslizamientos, debido a las formas características como los escarpes en cabecera o las áreas de acumulación suvazada al pie deslizamiento que podrían verse reflejadas en estas capas. Sin embargo, en las imágenes de entrenamiento (ver las imágenes de los histogramas de las bandas 13 y 14 más arriba) el histograma del modelo digital de elevaciones (DEM o MDE) y de la bande de pendientes nos muestra una agrupación de valores en determinados intervalos (¿quizás las curvas de nivel a partir de las cuales se generaron estos datos?).
+
+Para intentar mejorar estos conjuntos de datos, se ha optado por aplicar un filtro de 5x5 para suavizar tanto el modelo digital de elevaciones como la capa de pendientes.
+
+
+
 -------------------------------------------------------------------------
 
 ### Markdown
@@ -132,5 +143,9 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 [^3]: Ver, por ejemplo, https://link.springer.com/article/10.1007/s11069-022-05423-7 
 [^4]: Más detalles sobre las diferentes bandas en: https://www.satimagingcorp.com/satellite-sensors/other-satellite-sensors/sentinel-2a/ 
 [^5]: Más información sobre los datos del proyecto Alos Palsar en https://earth.esa.int/eogateway/catalog/alos-palsar-products
-[^6]: Ver, por ejemplo, https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada
-[^7]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
+[^6]: Por ejemplo:
+https://medium.com/sentinel-hub/landslide-detection-for-rapid-mapping-using-sentinel-2-2a84c2766a0
+https://www.ggs-solutions.eu/wp-content/uploads/Landslide-Detection-in-Central-America-using-the-Differential-Bare-Soil-Index.pdf
+
+[^7]: Ver, por ejemplo, https://es.wikipedia.org/wiki/%C3%8Dndice_de_vegetaci%C3%B3n_de_diferencia_normalizada
+[^8]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
