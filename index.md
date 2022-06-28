@@ -44,14 +44,15 @@ Cada banda presenta 128\*128 píxeles, con una resolución de 10 m por pixel.
 *Las 14 bandas en el fichero imgage_1.h5*
 
 
-Por cada fichero en la carpeta "img", con la misma numeración, tamaño de malla, resolución, y en la carpeta mask, se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
+Por cada fichero en la carpeta "img", con la misma numeración en el fichero, tamaño de malla (128\*128), resolución (10 m) en la carpeta mask se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
 
 ![Deslizamientos etiquetados](./img/mask_landslide.png)
 
 *Deslizamientos etiquetados en la imagen mask_1.h5 (mismo área que la imagen anterior, image_1.h5*)*
 
-
-
+Las imágenes etiquetadas ("mask") siguen la siguiente clasificación:
+- No deslizamiento: 0
+- Deslizamiento: 1
 
 
 
