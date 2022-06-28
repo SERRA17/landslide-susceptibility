@@ -32,16 +32,23 @@ El juego de datos con el que se ha realizado el presente trabajo está compuesto
 
 ![Carpetas](./img/training_folder.png)
 
-En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los satélites Sentinel-2 más dos bandas adicionales: un modelo digital del terreno y un modelo de pendientes. 
+En la carpeta "img", cada fichero \*.h5 incluye 12 bandas de una imagen de los satélites Sentinel-2 más dos bandas adicionales: un modelo digital del terreno y un modelo de pendientes:
+
+- Datos multiespectrales de Sentinel-2[^4] : B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12.
+- Datos de pendiente de ALOS PALSAR: B13.
+- Modelo digital de elevaciones (MDE o DEM) de ALOS PALSAR: B14.
 
 ![Bandas en cada fichero h5](./img/bandas_sentinel.png)
 *Las 14 bandas en el fichero imgage_1.h5*
+
 
 Por cada fichero en la carpeta "img", con la misma numeración, y en la carpeta mask, se encuentra el fichero con las etiquetas, identificando las áreas con/sin deslizamiento.
 
 ![Deslizamientos etiquetados](./img/mask_landslide.png)
 
-*Deslizamientos etiquetados en el mismo área de la imagen anterior, image_1.h5*
+*Deslizamientos etiquetados en la imagen mask_1.h5 (mismo área que la imagen anterior, image_1.h5*)*
+
+
 
 
 
@@ -88,3 +95,4 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
 [^1]: Modificado de https://es.wikipedia.org/wiki/Deslizamiento_de_tierra
 [^2]: Fuente: https://www.who.int/health-topics/landslides#tab=tab_1 
 [^3]: Ver, por ejemplo, https://link.springer.com/article/10.1007/s11069-022-05423-7 
+[^4]: Más detalles sobre las diferentes bandas en: https://www.satimagingcorp.com/satellite-sensors/other-satellite-sensors/sentinel-2a/ 
