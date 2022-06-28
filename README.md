@@ -4,7 +4,8 @@ El presente repositorio contiene los scripts desarrollados en el marco del capst
 - Jesús de Diego Alarcón
 - Lluis Serra Domínguez
 
-Una breve explicación del alcance del proyecto puede encontrarse aquí: https://serra17.github.io/landslide-susceptibility/
+Una breve explicación del alcance del proyecto puede encontrarse aquí:[Pagina Github Pages](https://serra17.github.io/landslide-susceptibility/)
+
 El trabajo está basado en la propuesta especificada en el siguiente challenge: https://www.iarai.ac.at/landslide4sense/ 
 
 # El contenido
