@@ -96,6 +96,7 @@ NDVI (Sentinel 2) = (B8 – B4) / (B8 + B4)
 ```
 BSI = ((B11 + B04) - (B08 + B02)) / ((B11 + B04) + (B08 + B02))
 ```
+
 ### Generación de nuevos indicadores a partir del DEM suavizado
 
 Tanto el DEM como la banda de pendientes son, a priori, conjuntos de datos que pueden resultar de interés en la identificación de deslizamientos, debido a las formas características como los escarpes en cabecera o las áreas de acumulación suvazada al pie deslizamiento que podrían verse reflejadas en estas capas. Sin embargo, en las imágenes de entrenamiento (ver las imágenes de los histogramas de las bandas 13 y 14 más arriba) el histograma del modelo digital de elevaciones (DEM o MDE) y de la bande de pendientes nos muestra una agrupación de valores en determinados intervalos (¿quizás las curvas de nivel a partir de las cuales se generaron estos datos?).
