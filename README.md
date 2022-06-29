@@ -2,7 +2,7 @@
 
 El presente repositorio contiene los scripts desarrollados en el marco del capstone project del Postgrado UB Datascience and Machine Learning (  http://www.ub.edu/datascience/postgraduate/ ) por los estudiantes:
 - Jesús de Diego Alarcón
-- Lluis Serra Domínguez
+- Lluís Serra Domínguez
 
 Una breve explicación del alcance del proyecto puede encontrarse aquí:[Pagina Github Pages](https://serra17.github.io/landslide-susceptibility/)
 
