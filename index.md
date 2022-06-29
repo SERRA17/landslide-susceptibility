@@ -213,7 +213,11 @@ Finalmente se ha implementado un modelo de red convolucional tipo U-Net. Las car
 ![Curvas de aprendizaje modelo secuencial](./img/unet_model.png)
 *Curvas de aprendizaje del modelo U-Net*
 
+## Conclusiones
 
+Como principal conclusión podemos indicar que el modelo de red convolucional tipo U-Net implementado permite obtener unos resultados sustancialmente mejores que los otros algoritmos empleados.
+
+En su contra, es muy exigente en el uso de recursos de computación lo que limita las posibilidades de optimización de los parámetros utilizados.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
