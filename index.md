@@ -184,12 +184,16 @@ También es imprescindible analizar la multicolinearidad entre las variables ind
 
 El modelo de regresión logística utiliza una link function para transformar 
 
-### Segundo análisis: Modelo Secuencial y Modelo UNET
+### Segundo análisis: Modelo Secuencial y Modelo U-Net
 
 Se han implementado también dos modelos utilizando técnicas de *deep learning*. En primer lugar se ha creado un modelo secuencial sencillo y a continuación una red convolucional de tipo U-Net.
 
 #### Preprocesado de los datos
-Los datos han sido preprocesados para obtener las bandas indicadas anteriormente. Se han suavizado las bandas correspondientes al MDE y a las pendientes. A partir de esta información (en concreto del DEM) se han generado las tres bandas de curvatura del terreno. Además, se han obtenido los índices NDVI y BSI. A continuación, los valores nan generados durante cálculo de los índices NDVI y BSI han sido sustituidos por 0.000001 y se han normalizado las bandas. Todos los datos de las imágenes se han integrado en un array de 4 dimensiones, donde una de estas dimensiones se corresponde con la banda.
+Los datos han sido preprocesados para obtener las bandas indicadas anteriormente. Se han suavizado las bandas correspondientes al MDE y a las pendientes. A partir de esta información (en concreto del DEM) se han generado las tres bandas de curvatura del terreno. Además, se han obtenido los índices NDVI y BSI. A continuación, los valores nan generados durante cálculo de los índices NDVI y BSI han sido sustituidos por 0.000001 y se han normalizado las bandas. Todos los datos de las imágenes se han integrado en un array de 4 dimensiones: el índice de la imagen, la fila y columna (128x128) y la banda, siendo las dimensiones finales (3799, 128, 128, 8).
+
+#### El modelo secuencial
+
+#### El model U-Net
 
 
 
