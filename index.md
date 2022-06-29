@@ -181,9 +181,29 @@ enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility
 Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb) estan implementados en R.
 
 Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuantas variables hay en la base de datos?, ¿Con qué tipo de datos estamos trabajando?, ¿Estan normalizados?, ¿Hay NAs?
-También es imprescindible analizar la multicolinearidad entre las variables independientes. Si algunas variables estan correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. 
+También es imprescindible analizar la multicolinearidad entre las variables independientes. Si algunas variables estan correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestro caso, las variables independientes no estan correlacionadas, así que podemos proceder a desarrollar los modelos.
 
-El modelo de regresión logística utiliza una link function para transformar 
+El primer modelo que hemos creado es un modelo de regresión logística:
+```
+m1 <- glm(pa ~dem+slope+curvature+planform_curvature+profile_curvature+NDVI+BSI , data = traindata, family = binomial(link = "logit"))
+```
+La función summary() nos regresa el sumario del modelo. Dado que en los modelos de regressión logística la relación entre p(Y) y X no es lineal, los coeficientes de regressión no se corresponden con el cambio en la probabilidad de Y asociada con el incremento de una unidad de X. Cuánto se incremente la probabilidad de Y por unidad de X depende del valor de X, es decir, de la posición en la curva logística en la que se encuentre. De todas formas, podemos determinar si la relación entre los predictores y la ocurrencia de deslizamientos es positiva o negativa. Por ejemplo, la altitud y el pendiente tenen un efecto positivo a la ocurrencia de deslizamientos.
+
+```
+Coefficients:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)        -0.21253    0.09322  -2.280   0.0226 *  
+dem                 0.10808    0.02229   4.848 1.25e-06 ***
+slope               0.15080    0.03578   4.215 2.50e-05 ***
+curvature           0.06625    0.13186   0.502   0.6154    
+planform_curvature -0.06032    0.08392  -0.719   0.4723    
+profile_curvature   0.12227    0.10544   1.160   0.2462    
+NDVI                0.01877    0.02270   0.827   0.4084    
+BSI                 0.05302    0.03204   1.655   0.0980 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
 
 ### Segundo análisis: Modelo Secuencial y Modelo U-Net
 
