@@ -215,7 +215,7 @@ Finalmente se ha implementado un modelo de red convolucional tipo U-Net. Las car
 
 ## Conclusiones
 
-Como principal conclusión podemos indicar que el modelo de red convolucional tipo U-Net implementado permite obtener unos resultados sustancialmente mejores que los otros algoritmos empleados.
+Como principal conclusión podemos indicar que el modelo de red convolucional tipo U-Net implementado permite obtener unos resultados sustancialmente mejores que los otros algoritmos empleados. La siguiente imagen muestra la diferencia entre la predición y las zonas etiquetadas inicialmente como deslizamiento.
 
 ![Resultado final](./img/resultado_final.png)
 
