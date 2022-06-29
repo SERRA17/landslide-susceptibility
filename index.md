@@ -168,7 +168,7 @@ En los modelos que se detallan a continuación se han utilizado 7 bandas para el
 
 ### Primer análisis: Modelo logístico y Modelo de clasificación Random Forest
 #### Extracción de valores de ráster por puntos
-Para implementar el modelo logísto y de Bosques Aleatorios, hemos extraído los valores de las bandas de los rásters en 100 puntos distintos (por fichero). 50 
+Para implementar el modelo logístico y de Bosques Aleatorios, hemos extraído los valores de las bandas de los rásters en 100 puntos distintos (por fichero). 50 
 en zonas de landslide y 50 en zonas sin landslide. De esta manera hemos obtenido una base de datos con las variables respuesta (1, presencia de
 deslizamientos; 0, absencia de deslizamientos) y sus pertinentes valores de las bandas en 100 localidades distintas por fichero. El código para la extracción de los valores ráster por puntos se puede encontrar en el siguiente notebook [Raster sampling.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Raster%20sampling.ipynb). La base de datos resultante se puede descargar con el siguiente 
 enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/data_extraction.zip). 
@@ -178,10 +178,10 @@ enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility
 *Ejemplo de la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)*
 
 #### Los modelos
-Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb) estan implementados en R.
+Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb) están implementados en R.
 
-Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuantas variables hay en la base de datos?, ¿Con qué tipo de datos estamos trabajando?, ¿Estan normalizados?, ¿Hay NAs?
-También es imprescindible analizar la multicolinearidad entre las variables independientes. Si algunas variables estan correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestro caso, las variables independientes no estan correlacionadas, así que podemos proceder a desarrollar los modelos.
+Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuantas variables hay en la base de datos?, ¿Con qué tipo de datos estamos trabajando?, ¿Están  normalizados?, ¿Hay NAs?
+También es imprescindible analizar la multicolinealidad entre las variables independientes. Si algunas variables están correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestro caso, las variables independientes no están correlacionadas, así que podemos proceder a desarrollar los modelos.
 
 Por último, para después poder validar los modelos, hemos dividido el dataset en training y test. En nuestro caso hemos usado una partición de 0.75 para training y 0.25 para test.
 
@@ -189,7 +189,7 @@ El primer modelo que hemos creado es un modelo de regresión logística:
 ```
 m1 <- glm(pa ~dem+slope+curvature+planform_curvature+profile_curvature+NDVI+BSI , data = traindata, family = binomial(link = "logit"))
 ```
-La función summary() nos regresa el sumario del modelo. Dado que en los modelos de regressión logística la relación entre p(Y) y X no es lineal, los coeficientes de regressión no se corresponden con el cambio en la probabilidad de Y asociada con el incremento de una unidad de X. Cuánto se incremente la probabilidad de Y por unidad de X depende del valor de X, es decir, de la posición en la curva logística en la que se encuentre. De todas formas, podemos determinar si la relación entre los predictores y la ocurrencia de deslizamientos es positiva o negativa. Por ejemplo, la altitud y el pendiente tenen un efecto positivo a la ocurrencia de deslizamientos.
+La función summary() nos regresa el sumario del modelo. Dado que en los modelos de regressión logística la relación entre p(Y) y X no es lineal, los coeficientes de regressión no se corresponden con el cambio en la probabilidad de Y asociada con el incremento de una unidad de X. Cuánto se incremente la probabilidad de Y por unidad de X depende del valor de X, es decir, de la posición en la curva logística en la que se encuentre. De todas formas, podemos determinar si la relación entre los predictores y la ocurrencia de deslizamientos es positiva o negativa. Por ejemplo, la altitud y el pendiente tienen un efecto positivo a la ocurrencia de deslizamientos.
 
 ```
 Coefficients:
@@ -211,11 +211,29 @@ El siguiente paso es hacer predicciones y validar los resultados del modelo. Par
 - Recall: Es la proporción de casos positivos que fueron correctamente identificadas por el algoritmo
 - Accuracy: Proporción de resultados verdaderos (tanto verdaderos positivos como verdaderos negativos) dividido entre el número total de casos examinados
 - Precision: Se representa por la proporción de verdaderos positivos dividido entre todos los resultados positivos (tanto verdaderos positivos, como falsos positivos).
-- F1-score: El valor F1 se utiliza para combinar las medidas de precision y recall en un sólo valor. Nos permite comparar el rendimiento combinado de la precisión y la exhaustividad entre varias soluciones. El F1 score es la metrica utilizada para el challenge.
+- F1-score: El valor F1 se utiliza para combinar las medidas de precisión y recall en un sólo valor. Nos permite comparar el rendimiento combinado de la precisión y la exhaustividad entre varias soluciones. El F1 score es la métrica utilizada para el challenge.
 
-Los resultados del modelo logístico no son nada informativos ya que todas las métricas de evaluación estan alrededor del 0.5.
+Los resultados del modelo logístico no son nada informativos ya que todas las métricas de evaluación están alrededor del 0.5.
+```
+[1] "accuracy: 0.504550395016466"
+[1] "precision: 0.503479155321595"
+[1] "recall: 0.540833902050632"
+[1] "f1 score: 0.521488444966706"
+``` 
 
-El segundo modelo hemos creado es un modelo de clasificación Random Forest.
+El segundo modelo hemos implementado es un modelo de clasificación Random Forest (Bosques Aleatorios). Un Random Forest es un conjunto (ensemble) de árboles de decisión combinados con bagging (ningún árbol ve todos los datos de entrenamiento).
+```
+m2= randomForest(pa~dem+slope+curvature+planform_curvature+profile_curvature+NDVI+BSI, data=traindata,ntree=500, importance=TRUE)
+```
+Este modelo produce mejores resultados que el modelo de regresión logístico, pero sigue siendo bastante malo. 
+
+```
+[1] "accuracy: 0.557062440179745"
+[1] "precision: 0.554119446785926"
+[1] "recall: 0.576809333463326"
+[1] "f1 score: 0.565236775898857"
+```
+
 
 ### Segundo análisis: Modelo Secuencial y Modelo U-Net
 
