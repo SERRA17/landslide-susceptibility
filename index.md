@@ -114,7 +114,7 @@ Una vez suavizado el modelo digital del terreno, es posible obtener nuevos conju
 - Profile curvature
 - Planform curvature
 
-Finalmente, a partir de la información original es posible obtener, para cada imagen, un nuevo conjunto de datasets.*
+Finalmente, a partir de la información original es posible obtener, para cada imagen, un nuevo conjunto de datasets.
 
 ![Preprocesado de datos](./img/preprocesado_datos.png)
 
