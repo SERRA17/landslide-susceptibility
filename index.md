@@ -1,7 +1,7 @@
 # Identificación de desliamientos en imágenes Sentinel-2
 
 Esta página explica el trabajo desarrollado en el marco del *Capstone project* del Postgrado UB Datascience and Machine Learning (  http://www.ub.edu/datascience/postgraduate/ ) por los estudiantes:
-- Lluis Serra Domínguez
+- Lluís Serra Domínguez
 - Jesús de Diego Alarcón
 
 Como tema para el projecto final se ha utilizado el *challenge* propuesto por el *Institute for Advanced Research in Artificial Ingelligente* accesible en el siguiente enlace: [Landslide4Sense](https://www.iarai.ac.at/landslide4sense/)
@@ -150,6 +150,28 @@ for i, (img, mask) in enumerate(zip(all_train, all_mask)):
         data_nir = data[:, :, 7]
         NDVI = np.divide(data_nir - data_red,np.add(data_nir, data_red))
 ```
+### Bandas utilizadas
+En total hemos utilizado 7 bandas para el análisis de datos[^10]:
+- Modelo Digital de elevación (suavizado)
+- Modelo de pendientes (suavizado)
+- Modelo de curvatura del terreno
+- Modelo de curvatura del terreno (planform curvature)
+- Modelo de curvatura del terreno (profile curvature)
+- BSI (Índice de Suelo Desnudo)
+- NDVI (Índice de Vegetación de Diferencia Normalizada)
+
+## Análisis de datos
+Para el análisis hemos seguido 2 metodologías distantas[^10]:
+- Modelo de Regresión Logística y Modelo de clasificación Random Forest
+- Modelo desegmentación UNET (deep learning)
+
+### Primer análisis: Modelo logístico y Modelo de clasificación Random Forest
+#### Extracción de valores de ráster por puntos
+Para implementar el modelo logísto y de Bosques Aleatorios, hemos extraído los valores de las bandas de los rásters en 100 puntos distintos (por fichero). 50 
+en zonas de landslide y 50 en zonas sin landslide. De esta manera hemos obtenido una base de datos con las variables respuesta (1, presencia de
+deslizamientos; 0, absencia de deslizamientos) y sus pertinentes valores de las bandas en 100 localidades distintas por fichero. El código para la extracción de los valores ráster por puntos se puede encontrar en el siguiente notebook [Raster sampling.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Raster%20sampling.ipynb). La base de datos resultante se puede descargar con el siguiente 
+enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/data_extraction.zip). 
+
 
 -------------------------------------------------------------------------
 
