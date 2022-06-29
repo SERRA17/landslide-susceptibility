@@ -217,6 +217,8 @@ Finalmente se ha implementado un modelo de red convolucional tipo U-Net. Las car
 
 Como principal conclusión podemos indicar que el modelo de red convolucional tipo U-Net implementado permite obtener unos resultados sustancialmente mejores que los otros algoritmos empleados.
 
+![Resultado final](./img/resultado_final.png)
+
 En su contra, es muy exigente en el uso de recursos de computación lo que limita las posibilidades de optimización de los parámetros utilizados.
 
 
