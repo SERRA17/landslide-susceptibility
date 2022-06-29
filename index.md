@@ -113,7 +113,7 @@ Una vez suavizado el modelo digital del terreno, es posible obtener nuevos conju
 - Profile curvature
 - Planform curvature
 
-Finalmente, a partir de la información original es posible obtener, para cada imagen, un nuevo conjunto de datasets.
+Finalmente, a partir de la información original es posible obtener, para cada imagen, un nuevo conjunto de datasets.*
 
 ![Preprocesado de datos](./img/preprocesado_datos.png)
 
@@ -174,10 +174,12 @@ enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility
 
 ![ejemplo de la extracción de puntos](./img/extraccion_puntos_ejemplo.png)
 
-*Ejemplo ddde la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)
+*Ejemplo de la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)
 
 ### Los modelos
-Los modelos fueron implementados en R y el notebook se puede descargar con el siguiente enlace [Logistic Regression and Random Forest classification.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb)
+Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb) los 
+implementamos en R.
+
 -------------------------------------------------------------------------
 
 ### Markdown
