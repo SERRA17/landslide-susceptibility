@@ -173,6 +173,7 @@ deslizamientos; 0, absencia de deslizamientos) y sus pertinentes valores de las 
 enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/data_extraction.zip). 
 
 ![ejemplo de la extracción de puntos](https://github.com/SERRA17/landslide-susceptibility/blob/gh-pages/img/extraccion_puntos_ejemplo.png)
+
 *Ejemplo de la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)
 
 ### Los modelos
