@@ -117,6 +117,40 @@ Finalmente, a partir de la información original es posible obtener, para cada i
 
 ![Preprocesado de datos](./img/preprocesado_datos.png)
 
+El siguiente fragmento de código permite obtener estos nuevos datos para cada imagen, y es utilizando en este Notebook: [UNET Model](https://github.com/SERRA17/landslide-susceptibility/blob/main/deep-learning/UNET%20model.ipynb)
+
+```
+for i, (img, mask) in enumerate(zip(all_train, all_mask)):
+
+    with h5py.File(img) as hdf:
+        ls = list(hdf.keys())
+        data = np.array(hdf.get('img'))
+
+        # assign 0 for the nan value
+        data[np.isnan(data)] = 0.000001
+        
+        #slope and dem
+        dem= data[:, :, 13]
+        slope= data[:, :, 12]
+        k = 5 #smoothing factor for reducing the noise
+        dem_suavizado = cv.blur(dem,(k,k)) #reducción de ruido dem
+        slope_suavizado = cv.blur(slope,(k,k)) #reducción de ruido slope
+        
+        #curvature
+        dem_richdem = rd.rdarray(dem_suavizado, no_data=-9999) #convert to rdarray
+        dem_curvature = rd.TerrainAttribute(dem_richdem, attrib="curvature") #calculate curvature
+        dem_planform_curvature = rd.TerrainAttribute(dem_richdem, attrib="planform_curvature") #calculate planform_curvature
+        dem_profile_curvature = rd.TerrainAttribute(dem_richdem, attrib="profile_curvature") #calculate profile curvature
+    
+        #BSI calculation
+        BSI= ((data[:,:,10] + data[:,:,3]) - (data[:,:,7] + data[:,:,1]) / (data[:,:,10] + data[:,:,3]) + (data[:,:,7] + data[:,:,1]))
+
+        # ndvi calculation
+        data_red = data[:, :, 3]
+        data_nir = data[:, :, 7]
+        NDVI = np.divide(data_nir - data_red,np.add(data_nir, data_red))
+```
+
 -------------------------------------------------------------------------
 
 ### Markdown
