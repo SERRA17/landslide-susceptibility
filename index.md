@@ -207,44 +207,15 @@ Se ha utilizado una función de pérdida de tipo Binary Loss Entropy, atendiendo
 
 #### El model U-Net
 
+Finalmente se ha implementado un modelo de red convolucional tipo U-Net. Las características del modelo pueden verse en el Notebook [UNET Model](https://github.com/SERRA17/landslide-susceptibility/blob/main/deep-learning/UNET%20model.ipynb) .Se ha utlizado la misma función de pérdida que en el caso anterior. Se programa el modelo para ejecutar 100 epocs. Como resultado final se obtiene un valor de F1 de 0.7006[^11]. Las curvas de aprendizaje de los parámetros se muestran a continuación.
+
+![Curvas de aprendizaje modelo secuencial](./img/unet_model.png)
+*Curvas de aprendizaje del modelo U-Net*
 
 
 
-seriamente afectados. 
--------------------------------------------------------------------------
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SERRA17/landslide-susceptibility/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
+---------------------------------------------------------------------------------------------------------------------------------------------------
 [^1]: Modificado de https://es.wikipedia.org/wiki/Deslizamiento_de_tierra
 [^2]: Fuente: https://www.who.int/health-topics/landslides#tab=tab_1 
 [^3]: Ver, por ejemplo, https://link.springer.com/article/10.1007/s11069-022-05423-7 
@@ -258,3 +229,4 @@ https://www.ggs-solutions.eu/wp-content/uploads/Landslide-Detection-in-Central-A
 [^8]: Más información en https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/barren_soil/
 [^9]: Ver https://richdem.readthedocs.io/en/latest/ 
 [^10]: Para una explicación detallada de estos parámetros: https://richdem.readthedocs.io/en/latest/terrain_attributes.html?highlight=curvature#curvature
+[^11]: Como referencia, los equipos ganadores en el *challenge* en el que se basa este trabajo obtuvieron unos valores de F1 entre 0.7454 y 0.7350. El equipo que recibió el premio a la solución más innovadora obtuvo un F1 score de 0.7129.
