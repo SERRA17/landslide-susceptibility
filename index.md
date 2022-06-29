@@ -183,6 +183,8 @@ Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logi
 Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuantas variables hay en la base de datos?, ¿Con qué tipo de datos estamos trabajando?, ¿Estan normalizados?, ¿Hay NAs?
 También es imprescindible analizar la multicolinearidad entre las variables independientes. Si algunas variables estan correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestro caso, las variables independientes no estan correlacionadas, así que podemos proceder a desarrollar los modelos.
 
+Por último, para después poder validar los modelos, hemos dividido el dataset en training y test. En nuestro caso hemos usado una partición de 0.75 para training y 0.25 para test.
+
 El primer modelo que hemos creado es un modelo de regresión logística:
 ```
 m1 <- glm(pa ~dem+slope+curvature+planform_curvature+profile_curvature+NDVI+BSI , data = traindata, family = binomial(link = "logit"))
@@ -204,6 +206,16 @@ BSI                 0.05302    0.03204   1.655   0.0980 .
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
+El siguiente paso es hacer predicciones y validar los resultados del modelo. Para ello, hemos calculado las siguientes métricas de evaluación:
+- AUC(Area Under a receiver operating characteristic (ROC) Curve): Relación entre la tasa de verdaderos positivos (como porcentaje de todos los eventos que ocurren) y la tasa de falsos positivos (como porcentaje de todos los que no ocurren).
+- Recall: Es la proporción de casos positivos que fueron correctamente identificadas por el algoritmo
+- Accuracy: Proporción de resultados verdaderos (tanto verdaderos positivos como verdaderos negativos) dividido entre el número total de casos examinados
+- Precision: Se representa por la proporción de verdaderos positivos dividido entre todos los resultados positivos (tanto verdaderos positivos, como falsos positivos).
+- F1-score: El valor F1 se utiliza para combinar las medidas de precision y recall en un sólo valor. Nos permite comparar el rendimiento combinado de la precisión y la exhaustividad entre varias soluciones. El F1 score es la metrica utilizada para el challenge.
+
+Los resultados del modelo logístico no son nada informativos ya que todas las métricas de evaluación estan alrededor del 0.5.
+
+El segundo modelo hemos creado es un modelo de clasificación Random Forest.
 
 ### Segundo análisis: Modelo Secuencial y Modelo U-Net
 
