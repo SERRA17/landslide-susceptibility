@@ -192,6 +192,18 @@ Se han implementado también dos modelos utilizando técnicas de *deep learning*
 Los datos han sido preprocesados para obtener las bandas indicadas anteriormente. Se han suavizado las bandas correspondientes al MDE y a las pendientes. A partir de esta información (en concreto del DEM) se han generado las tres bandas de curvatura del terreno. Además, se han obtenido los índices NDVI y BSI. A continuación, los valores nan generados durante cálculo de los índices NDVI y BSI han sido sustituidos por 0.000001 y se han normalizado las bandas. Todos los datos de las imágenes se han integrado en un array de 4 dimensiones: el índice de la imagen, la fila y columna (128x128) y la banda, siendo las dimensiones finales (3799, 128, 128, 8).
 
 #### El modelo secuencial
+En primer lugar, se ha implementado un modelo secuencial con tres capas. 
+
+```
+model_sequential.add(Dense(20, input_shape=(128, 128, 7), activation='relu')) 
+model_sequential.add(Dense(10, activation='relu'))
+model_sequential.add(Dense(1, activation='sigmoid'))
+```
+
+Se ha utilizado una función de pérdida de tipo Binary Loss Entropy, atendiendo al caracter binario del resultado esperado. Una vez ejecutado, el modelo ofrece un valor de F1 de  0.5442. En la siguiente imagen se presentan las curvas de aprendizaje de los diferentes parámetros considerados.
+
+![Curvas de aprendizaje modelo secuencial](./img/secuential_model.png)
+*Curvas de aprendizaje del modelo secuencial*
 
 #### El model U-Net
 
