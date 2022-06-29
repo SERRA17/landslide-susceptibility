@@ -172,9 +172,9 @@ en zonas de landslide y 50 en zonas sin landslide. De esta manera hemos obtenido
 deslizamientos; 0, absencia de deslizamientos) y sus pertinentes valores de las bandas en 100 localidades distintas por fichero. El código para la extracción de los valores ráster por puntos se puede encontrar en el siguiente notebook [Raster sampling.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Raster%20sampling.ipynb). La base de datos resultante se puede descargar con el siguiente 
 enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/data_extraction.zip). 
 
-![ejemplo de la extracción de puntos](https://github.com/SERRA17/landslide-susceptibility/blob/gh-pages/img/extraccion_puntos_ejemplo.png)
+![ejemplo de la extracción de puntos](./img/extraccion_puntos_ejemplo.png)
 
-*Ejemplo de la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)
+*Ejemplo ddde la disposición de las localidades para el muestreo del ráster para un fichero (en rojo zonas de landslide y en negro zonas sin landslide)
 
 ### Los modelos
 Los modelos fueron implementados en R y el notebook se puede descargar con el siguiente enlace [Logistic Regression and Random Forest classification.ipynb](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb)
