@@ -150,8 +150,13 @@ for i, (img, mask) in enumerate(zip(all_train, all_mask)):
         data_nir = data[:, :, 7]
         NDVI = np.divide(data_nir - data_red,np.add(data_nir, data_red))
 ```
+## Análisis de datos
+Para el análisis hemos seguido 2 metodologías distantas:
+- Modelo de Regresión Logística y Modelo de clasificación Random Forest
+- Modelo desegmentación UNET (deep learning)
+
 ### Bandas utilizadas
-En total hemos utilizado 7 bandas para el análisis de datos:
+En los modelos que se detallan a continuación se han utilizado 7 bandas para el análisis de datos:
 - Modelo Digital de elevación (suavizado)
 - Modelo de pendientes (suavizado)
 - Modelo de curvatura del terreno
@@ -159,11 +164,6 @@ En total hemos utilizado 7 bandas para el análisis de datos:
 - Modelo de curvatura del terreno (profile curvature)
 - BSI (Índice de Suelo Desnudo)
 - NDVI (Índice de Vegetación de Diferencia Normalizada)
-
-## Análisis de datos
-Para el análisis hemos seguido 2 metodologías distantas:
-- Modelo de Regresión Logística y Modelo de clasificación Random Forest
-- Modelo desegmentación UNET (deep learning)
 
 ### Primer análisis: Modelo logístico y Modelo de clasificación Random Forest
 #### Extracción de valores de ráster por puntos
@@ -183,6 +183,15 @@ Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuant
 También es imprescindible analizar la multicolinearidad entre las variables independientes. Si algunas variables estan correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. 
 
 El modelo de regresión logística utiliza una link function para transformar 
+
+### Segundo análisis: Modelo Secuencial y Modelo UNET
+
+Se han implementado también dos modelos utilizando técnicas de *deep learning*. En primer lugar se ha creado un modelo secuencial sencillo y a continuación una red convolucional de tipo U-Net.
+
+#### Preprocesado de los datos
+Los datos han sido preprocesados para obtener las bandas indicadas anteriormente. Se han suavizado las bandas correspondientes al MDE y a las pendientes. A partir de esta información (en concreto del DEM) se han generado las tres bandas de curvatura del terreno. Además, se han obtenido los índices NDVI y BSI. A continuación, los valores nan generados durante cálculo de los índices NDVI y BSI han sido sustituidos por 0.000001 y se han normalizado las bandas. Todos los datos de las imágenes se han integrado en un array de 4 dimensiones, donde una de estas dimensiones se corresponde con la banda.
+
+
 
 
 seriamente afectados. 
