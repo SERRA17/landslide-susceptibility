@@ -157,7 +157,7 @@ Para el análisis hemos seguido 2 metodologías distantas:
 - Modelo desegmentación UNET (deep learning)
 
 ### Bandas utilizadas
-En los modelos que se detallan a continuación se han utilizado 7 bandas para el análisis de datos:
+En los modelos que se detallan a continuación se han utilizado 7 bandas:
 - Modelo Digital de elevación (suavizado)
 - Modelo de pendientes (suavizado)
 - Modelo de curvatura del terreno
@@ -181,15 +181,15 @@ enlace [data_extraction.zip](https://github.com/SERRA17/landslide-susceptibility
 Los [modelos](https://github.com/SERRA17/landslide-susceptibility/blob/main/logistic%20and%20random%20forest%20model/Logistic%20Regression%20and%20Random%20Forest%20classification.ipynb) están implementados en R.
 
 Antes de crear los modelos, es buena idea hechar un vistazo a los datos: ¿Cuantas variables hay en la base de datos?, ¿Con qué tipo de datos estamos trabajando?, ¿Están  normalizados?, ¿Hay NAs?
-También es imprescindible analizar la multicolinealidad entre las variables independientes. Si algunas variables están correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad. En nuestro modelo hemos usado factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestro caso, las variables independientes no están correlacionadas, así que podemos proceder a desarrollar los modelos.
+También es imprescindible analizar la multicolinealidad entre las variables independientes. Si algunas variables están correlacionadas, los estimadores obtenidos y la precisión de éstos se verán afectados. Numerosos métodos han sido desarrollados para detectar multicolinealidad, por ejemplo el Factor de Inflación de la Varianza (VIF).  Este índice mide hasta qué punto la varianza de un coeficiente de regresión estimado se incrementa a causa de la colinearidad. Generalmente se considera que existe un problema grave cuando el VIF excede 10. En nuestros modelos, las variables independientes no están correlacionadas.
 
-Por último, para después poder validar los modelos, hemos dividido el dataset en training y test. En nuestro caso hemos usado una partición de 0.75 para training y 0.25 para test.
+Por último, hemos dividido el dataset en training y test para poder hacer la validación del modelo. En nuestro caso hemos usado una partición de 0.75 para training y 0.25 para test.
 
 El primer modelo que hemos creado es un modelo de regresión logística:
 ```
 m1 <- glm(pa ~dem+slope+curvature+planform_curvature+profile_curvature+NDVI+BSI , data = traindata, family = binomial(link = "logit"))
 ```
-La función summary() nos regresa el sumario del modelo. Dado que en los modelos de regressión logística la relación entre p(Y) y X no es lineal, los coeficientes de regressión no se corresponden con el cambio en la probabilidad de Y asociada con el incremento de una unidad de X. Cuánto se incremente la probabilidad de Y por unidad de X depende del valor de X, es decir, de la posición en la curva logística en la que se encuentre. De todas formas, podemos determinar si la relación entre los predictores y la ocurrencia de deslizamientos es positiva o negativa. Por ejemplo, la altitud y el pendiente tienen un efecto positivo a la ocurrencia de deslizamientos.
+La función summary() nos regresa el sumario del modelo. Dado que en los modelos de regressión logística la relación entre p(Y) y X no es lineal, los coeficientes de regressión no se corresponden con el cambio en la probabilidad de Y asociada con el incremento de una unidad de X. De todas formas, podemos determinar si la relación entre los predictores y la ocurrencia de deslizamientos es positiva o negativa. Por ejemplo, la altitud y el pendiente tienen un efecto positivo a la ocurrencia de deslizamientos.
 
 ```
 Coefficients:
