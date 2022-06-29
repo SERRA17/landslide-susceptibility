@@ -48,7 +48,7 @@ Por cada fichero en la carpeta "img", con la misma numeración en el fichero, ta
 
 ![Deslizamientos etiquetados](./img/mask_landslide.png)
 
-*Deslizamientos etiquetados en la imagen mask_1.h5 (mismo área que la imagen anterior, image_1.h5*)*
+*Deslizamientos etiquetados en la imagen mask_1.h5 (mismo área que la imagen anterior, image_1.h5)*
 
 Las imágenes etiquetadas ("mask") siguen la siguiente clasificación:
 - No deslizamiento: 0
